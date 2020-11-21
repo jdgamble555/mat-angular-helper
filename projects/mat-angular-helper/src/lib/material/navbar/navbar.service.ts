@@ -25,11 +25,11 @@ export class NavbarService {
   }
 
   openLeftNav() {
-    return this.leftNav.open();
+    this.leftNav.open();
   }
 
   closeLeftNav() {
-    return this.leftNav.close();
+    this.leftNav.close();
   }
 
   toggleLeftNav() {
@@ -37,11 +37,11 @@ export class NavbarService {
   }
 
   openRightNav() {
-    return this.rightNav.open();
+    this.rightNav.open();
   }
 
   closeRightNav() {
-    return this.rightNav.close();
+    this.rightNav.close();
   }
 
   toggleRightNav() {

@@ -12,8 +12,6 @@ export * from './lib/angular/seo/seo.module';
 export * from './lib/angular/seo/seo.service';
 
 export * from './lib/material/material.module';
-export * from './lib/material/navbar/navbar.module';
-export * from './lib/material/snackbar/snackbar.module';
 export * from './lib/material/navbar/navbar.service';
 export * from './lib/material/snackbar/snackbar.service';
 

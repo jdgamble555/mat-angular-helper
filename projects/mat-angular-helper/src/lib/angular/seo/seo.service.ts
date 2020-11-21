@@ -25,9 +25,6 @@ export class SeoService {
       return;
     }
     this.cachetitle = title;
-
-    console.log(domain);
-
     this.title.setTitle(title);
     this.setTags([
       // Open Graph
