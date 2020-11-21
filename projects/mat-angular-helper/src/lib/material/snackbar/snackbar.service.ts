@@ -22,15 +22,6 @@ export class SnackbarService {
     });
   }
   /**
-   * Replaces variables and shows snackbar message
-   * @param msg message with {0} in it
-   * @param v varible to replace
-   */
-  replaceMsg(msg: string, v: string): void {
-    const sFormat = (str: string, ...args: string[]) => str.replace(/{(\d+)}/g, (match, index) => args[index] || '');
-    this.showMsg(sFormat(msg, v));
-  }
-  /**
    * Shows error snackbar message
    * @param msg error message
    */

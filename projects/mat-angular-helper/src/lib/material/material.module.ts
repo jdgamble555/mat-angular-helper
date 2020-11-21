@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,15 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-
-const declarations = [
-  ConfirmDialogComponent
-];
-
-
 const modules = [
-  CommonModule,
   MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
@@ -56,9 +47,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [...declarations],
   imports: [...modules],
-  exports: [...modules],
-  entryComponents: [ConfirmDialogComponent]
+  exports: [...modules]
 })
 export class MaterialModule { }

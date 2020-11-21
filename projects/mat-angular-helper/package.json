@@ -1,9 +1,11 @@
 {
   "name": "mat-angular-helper",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^11.0.1",
-    "@angular/core": "^11.0.1"
+    "@angular/core": "^11.0.1",
+    "@angular/material": "10.2.2",
+    "@angular/cdk": "10.2.2"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -8,9 +8,15 @@ export * from './lib/mat-angular-helper.module';
 
 export * from './lib/angular/drop-zone/drop-zone.directive';
 export * from './lib/angular/drop-zone/drop-zone.module';
-export * from './lib/angular/seo.service';
+export * from './lib/angular/seo/seo.module';
+export * from './lib/angular/seo/seo.service';
 
 export * from './lib/material/material.module';
-export * from './lib/material/dialog.service';
-export * from './lib/material/navbar.service';
-export * from './lib/material/snackbar.service';
+export * from './lib/material/navbar/navbar.module';
+export * from './lib/material/snackbar/snackbar.module';
+export * from './lib/material/navbar/navbar.service';
+export * from './lib/material/snackbar/snackbar.service';
+
+export * from './lib/material/confirm-dialog/confirm-dialog.module';
+export * from './lib/material/confirm-dialog/dialog.service';
+export * from './lib/material/confirm-dialog/confirm-dialog.component';
