@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "mat-angular-helper": {
+      "projectType": "library",
+      "root": "projects/mat-angular-helper",
+      "sourceRoot": "projects/mat-angular-helper/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/mat-angular-helper/tsconfig.lib.json",
+            "project": "projects/mat-angular-helper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mat-angular-helper/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mat-angular-helper/src/test.ts",
+            "tsConfig": "projects/mat-angular-helper/tsconfig.spec.json",
+            "karmaConfig": "projects/mat-angular-helper/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mat-angular-helper/tsconfig.lib.json",
+              "projects/mat-angular-helper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mat-angular-helper"
 }
