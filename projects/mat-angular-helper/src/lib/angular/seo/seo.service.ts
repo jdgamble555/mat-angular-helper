@@ -15,9 +15,11 @@ export class SeoService {
     title = '',
     description = '',
     image = '',
-    summary = '',
     domain = '',
-    user = ''
+    user = '',
+    imageW = '',
+    imageH = '',
+    locale = ''
   }): void {
 
     // do nothing if same page
@@ -32,13 +34,25 @@ export class SeoService {
       { name: 'og:title', content: title },
       { name: 'og:description', content: description },
       { name: 'og:image', content: image },
-      // Twitter Card
-      { name: 'twitter:card', content: summary },
+      { name: 'og:type', content: 'article' },
+      // Twitter Card - must use 'summary_large_image' here
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:creator', content: user },
       { name: 'twitter:site', content: '@' + domain },
+      { name: 'twitter:image:alt', content: title },
       { name: 'twitter:image', content: image },
       { name: 'twitter:description', content: description }
     ]);
+
+    if (imageW) {
+      this.setTags([{ name: 'og:image:width', content: imageW }]);
+    }
+    if (imageH) {
+      this.setTags([{ name: 'og:image:height', content: imageH }]);
+    }
+    if (locale) {
+      this.setTags([{ name: 'og:locale', content: locale }]);
+    }
   }
   setTags(tags: any): void {
     tags.forEach((tag: any) => {
