@@ -1,7 +1,7 @@
 import { Directive, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: '[dropZone]'
+  selector: '[libDropZone]'
 })
 export class DropZoneDirective {
 
@@ -11,26 +11,24 @@ export class DropZoneDirective {
   constructor() { }
 
   @HostListener('drop', ['$event'])
-  onDrop($event: any) {
+  onDrop($event: any): void {
     $event.preventDefault();
-    $event.target.classList.remove("drop-active");
+    $event.target.classList.remove('drop-active');
     this.dropped.emit($event.dataTransfer.files);
     this.hovered.emit(false);
   }
 
   @HostListener('dragover', ['$event'])
-  onDragOver($event: any) {
+  onDragOver($event: any): void {
     $event.preventDefault();
-    $event.target.classList.add("drop-active");
+    $event.target.classList.add('drop-active');
     this.hovered.emit(true);
-    $event.tar
   }
 
   @HostListener('dragleave', ['$event'])
-  onDragLeave($event: any) {
+  onDragLeave($event: any): void {
     $event.preventDefault();
-    $event.target.classList.remove("drop-active");
+    $event.target.classList.remove('drop-active');
     this.hovered.emit(false);
   }
-
 }

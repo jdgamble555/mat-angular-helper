@@ -7,79 +7,36 @@ import { Router } from '@angular/router';
 })
 export class NavbarService {
 
-  crumbs!: any;
-
   private leftNav!: MatSidenav;
   private rightNav!: MatSidenav;
 
-  readonly root = "directory/category";
-
   constructor(private router: Router) { }
 
-  setLeftNav(leftNav: MatSidenav) {
+  setLeftNav(leftNav: MatSidenav): void {
     this.leftNav = leftNav;
   }
-
-  setRightNav(rightNav: MatSidenav) {
+  setRightNav(rightNav: MatSidenav): void {
     this.rightNav = rightNav;
   }
-
-  openLeftNav() {
+  openLeftNav(): void {
     this.leftNav.open();
   }
-
-  closeLeftNav() {
+  closeLeftNav(): void {
     this.leftNav.close();
   }
-
-  toggleLeftNav() {
+  toggleLeftNav(): void {
     this.leftNav.toggle();
   }
-
-  openRightNav() {
+  openRightNav(): void {
     this.rightNav.open();
   }
-
-  closeRightNav() {
+  closeRightNav(): void {
     this.rightNav.close();
   }
-
-  toggleRightNav() {
+  toggleRightNav(): void {
     this.rightNav.toggle();
   }
-
-  home() {
+  home(): void {
     this.router.navigate(['/']);
   }
-
-  getDirectories() {
-
-    let r = this.router.url;
-
-    let root = this.root;
-
-    r = r.replace(root, 'directory');
-
-    let i = 1;
-
-    const a = r.split("/").filter((c: string) => {
-      // filter blanks
-      if (c) return c;
-      return null;
-    }).map((c: any) => {
-      if (i != 1) {
-        root += '/' + c;
-      }
-      let name = c.charAt(0).toUpperCase() + c.substring(1);
-      name = name.replace(/-/g, ' ');
-      ++i;
-      return {
-        name,
-        link: '/' + root,
-        position: i
-      }
-    });
-    this.crumbs = a;
-  }
-
 }

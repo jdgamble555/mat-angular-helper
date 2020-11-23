@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class SeoService {
 
-  cachetitle: string = '!';
+  cachetitle = '!';
 
   constructor(private title: Title, private meta: Meta, private router: Router) { }
 
@@ -18,7 +18,7 @@ export class SeoService {
     summary = '',
     domain = '',
     user = ''
-  }) {
+  }): void {
 
     // do nothing if same page
     if (title === this.cachetitle) {
@@ -40,7 +40,7 @@ export class SeoService {
       { name: 'twitter:description', content: description }
     ]);
   }
-  setTags(tags: any) {
+  setTags(tags: any): void {
     tags.forEach((tag: any) => {
       const k = tag[Object.keys(tag)[0]];
       const t = `name='${k}'`;

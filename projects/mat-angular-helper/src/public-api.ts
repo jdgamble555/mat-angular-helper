@@ -18,3 +18,6 @@ export * from './lib/material/snackbar/snackbar.service';
 export * from './lib/material/confirm-dialog/confirm-dialog.module';
 export * from './lib/material/confirm-dialog/dialog.service';
 export * from './lib/material/confirm-dialog/confirm-dialog.component';
+
+export * from './lib/material/form-validators';
+export * from './lib/angular/bread-crumbs/bread-crumbs.service';

@@ -10,14 +10,12 @@ export class DialogService {
   constructor(public dialog: MatDialog) { }
 
   confirmDialog(msg: string): any {
-    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    return this.dialog.open(ConfirmDialogComponent, {
       height: '',
       width: '300px',
       data: {
         message: msg
       }
     });
-    return dialogRef;
   }
-
 }
